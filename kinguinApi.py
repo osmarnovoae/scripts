@@ -18,7 +18,7 @@ pages = (total_products // page_size) + (1 if total_products % page_size > 0 els
 
 all_products = []
 
-for page in range(1,3):
+for page in range(1,pages):
     params = { "pages" : page }
     response = requests.get(url+"/v1/products",headers=headers, params=params)
     data = response.json()
